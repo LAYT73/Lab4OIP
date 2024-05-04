@@ -1,10 +1,12 @@
 package view;
 
 import entities.Student;
+import utils.MyLogger;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Logger;
 
 public class AddForm extends JFrame {
     public JPanel PanelWrapper;
@@ -17,9 +19,9 @@ public class AddForm extends JFrame {
     private JSpinner spinnerAge;
     private JSpinner spinnerId;
     private JButton buttonAdd;
-
+    private static final Logger logger = MyLogger.getLogger();
     public AddForm(MainForm mainForm) {
-
+        logger.info("AddForm created");
         buttonAdd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -30,6 +32,7 @@ public class AddForm extends JFrame {
                 boolean isCulture = checkBoxIsCulture.isSelected();
 
                 if (name.isEmpty()) {
+                    logger.warning("Please enter student name.");
                     JOptionPane.showMessageDialog(mainForm, "Please enter student name.", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
@@ -45,8 +48,10 @@ public class AddForm extends JFrame {
                     spinnerAge.setValue(0);
                     textFieldName.setText("");
                     checkBoxIsCulture.setSelected(false);
+                    logger.info("Student added successfully.");
                     JOptionPane.showMessageDialog(mainForm, "Student added successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
                 } else {
+                    logger.warning("This id is already exist in collection.");
                     JOptionPane.showMessageDialog(mainForm, "This id is already exist in collection.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
 

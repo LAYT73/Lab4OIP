@@ -1,6 +1,7 @@
 package view;
 import entities.Student;
 import entities.StudentGroup;
+import utils.MyLogger;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -12,6 +13,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -30,7 +32,7 @@ public class MainForm extends JFrame {
     private JTable tableStudents;
     private JPanel PictureBox;
     private JTabbedPane tabbedPane1;
-
+    private static final Logger logger = MyLogger.getLogger();
     /**
      * Constructs a new MainForm.
      */
@@ -41,7 +43,7 @@ public class MainForm extends JFrame {
         buttonAdd.setName("buttonAdd");
         buttonFilter.setName("buttonFilter");
         buttonSave.setName("buttonSave");
-
+        logger.info("MainForm created");
         // Add action listeners for buttons
         buttonEdit.addActionListener(new ActionListener() {
             @Override
@@ -123,14 +125,17 @@ public class MainForm extends JFrame {
             textAreaStudents.append("Id: "+ student.getId() +", Name: " + student.getName() + ", Age: " + student.getAge() + ", Cultured: " + student.isCulture() + "\n");
         }
         initializeTable();
+        logger.info("The students have been successfully refreshed. ");
     }
 
     // Method to filter students who participate in cultural events
     private void filterCulturedStudents() {
+        logger.info("Student filtration has begun.");
         List<Student> culturedStudents = _studentGroup.getStudents().stream()
                 .filter(Student::isCulture) // Filter students who participate in cultural events
                 .collect(Collectors.toList());
         displayFilteredStudents(culturedStudents);
+        logger.info("The student filtration has ended successfully.");
     }
 
     // Method to display filtered students in JTextArea
@@ -151,6 +156,7 @@ public class MainForm extends JFrame {
         }
 
         tableStudents.setModel(model);
+        logger.info("Students filtered by isCulture successfully.");
         JOptionPane.showMessageDialog(this, "Students filtered by isCulture successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -168,6 +174,7 @@ public class MainForm extends JFrame {
         }
 
         tableStudents.setModel(model);
+        logger.info("Table initialized successfully.");
     }
 
     private void saveStudentsToFile() {
@@ -177,8 +184,10 @@ public class MainForm extends JFrame {
                 writer.write(student.getId() + "," + student.getName() + "," + student.getAge() + "," + student.isCulture());
                 writer.newLine(); // Переход на новую строку
             }
+            logger.info("Students saved to file students.txt successfully.");
             JOptionPane.showMessageDialog(this, "Students saved to file successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {
+            logger.warning("Error occurred while saving students to file students.txt.");
             JOptionPane.showMessageDialog(this, "Error occurred while saving students to file.", "Error", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         }
@@ -199,10 +208,12 @@ public class MainForm extends JFrame {
                     _studentGroup.addStudent(new Student(id, age, name, isCulture));
                 }
             }
+            logger.info("Students loaded from file students.txt successfully.");
             JOptionPane.showMessageDialog(this, "Students loaded from file successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
             // Обновляем список студентов в таблице после загрузки
             refreshStudents();
         } catch (IOException ex) {
+            logger.warning("Error occurred while loading students from file students.txt.");
             JOptionPane.showMessageDialog(this, "Error occurred while loading students from file.", "Error", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         }
