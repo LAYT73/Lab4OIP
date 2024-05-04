@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="view.MainForm">
+  <grid id="27dc6" binding="PanelWrapper" layout-manager="GridLayoutManager" row-count="3" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="719" height="456"/>
+    </constraints>
+    <properties>
+      <background color="-394753"/>
+      <foreground color="-1715250"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <tabbedpane id="864f6" binding="tabbedPane1" default-binding="true">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="200"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-4990477"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="652f8" binding="PictureBox" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Список"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="4be0e" class="javax.swing.JTextArea" binding="textAreaStudents">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-4990477"/>
+                  <editable value="false"/>
+                  <font size="20"/>
+                  <text value=""/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="65c94" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Таблица"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="21ab6" class="javax.swing.JTable" binding="tableStudents">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-15198166"/>
+                  <font size="16"/>
+                  <foreground color="-2561793"/>
+                  <gridColor color="-4470567"/>
+                  <name value=""/>
+                  <rowHeight value="32"/>
+                  <rowMargin value="0"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </tabbedpane>
+      <component id="713c1" class="javax.swing.JButton" binding="buttonEdit">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Редактировать"/>
+        </properties>
+      </component>
+      <component id="30d4a" class="javax.swing.JButton" binding="buttonRefresh">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Обновить"/>
+        </properties>
+      </component>
+      <component id="abd7f" class="javax.swing.JButton" binding="buttonRemove">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Удалить"/>
+        </properties>
+      </component>
+      <component id="de860" class="javax.swing.JButton" binding="buttonAdd">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Добавить"/>
+        </properties>
+      </component>
+      <component id="a9150" class="javax.swing.JButton" binding="buttonFilter">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Фильтровать"/>
+        </properties>
+      </component>
+      <component id="d422d" class="javax.swing.JButton" binding="buttonSave">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Сохранить"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
