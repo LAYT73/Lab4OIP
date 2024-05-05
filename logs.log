@@ -1,56 +1,28 @@
-мая 04, 2024 11:25:09 PM Main main
+мая 05, 2024 11:43:46 PM Main main
 INFO: Application started.
-мая 04, 2024 11:25:10 PM view.MainForm <init>
-INFO: MainForm created
-мая 04, 2024 11:25:10 PM view.MainForm loadStudentsFromFile
+мая 05, 2024 11:43:46 PM view.MainForm setStats
+INFO: Statistics set successfully.
+мая 05, 2024 11:43:46 PM view.MainForm createTable
+INFO: Table created successfully.
+мая 05, 2024 11:43:46 PM view.MainForm loadStudentsFromFile
 INFO: Students loaded from file students.txt successfully.
-мая 04, 2024 11:25:12 PM view.MainForm initializeTable
+мая 05, 2024 11:43:47 PM view.MainForm initializeTable
 INFO: Table initialized successfully.
-мая 04, 2024 11:25:12 PM view.MainForm refreshStudents
-INFO: The students have been successfully refreshed. 
-мая 04, 2024 11:25:12 PM view.MainForm initializeTable
+мая 05, 2024 11:43:47 PM view.MainForm setStats
+INFO: Statistics set successfully.
+мая 05, 2024 11:43:47 PM view.MainForm refreshStudents
+INFO: The students have been successfully refreshed.
+мая 05, 2024 11:43:48 PM view.MainForm initializeTable
 INFO: Table initialized successfully.
-мая 04, 2024 11:25:12 PM view.MainForm initializeTable
+мая 05, 2024 11:43:48 PM view.MainForm initializeTable
 INFO: Table initialized successfully.
-мая 04, 2024 11:25:12 PM view.MainForm refreshStudents
-INFO: The students have been successfully refreshed. 
-мая 04, 2024 11:25:19 PM view.EditForm <init>
-INFO: EditForm created
-мая 04, 2024 11:25:37 PM view.EditForm editStudent
-INFO: Started editing a student with Id: 4
-мая 04, 2024 11:25:37 PM view.MainForm initializeTable
-INFO: Table initialized successfully.
-мая 04, 2024 11:25:38 PM view.MainForm refreshStudents
-INFO: The students have been successfully refreshed. 
-мая 04, 2024 11:25:38 PM view.EditForm editStudent
-INFO: Student with ID 4 edited succesfully.
-мая 04, 2024 11:25:41 PM view.AddForm <init>
-INFO: AddForm created
-мая 04, 2024 11:25:53 PM view.MainForm initializeTable
-INFO: Table initialized successfully.
-мая 04, 2024 11:25:53 PM view.MainForm refreshStudents
-INFO: The students have been successfully refreshed. 
-мая 04, 2024 11:25:53 PM view.AddForm$1 actionPerformed
-INFO: Student added successfully.
-мая 04, 2024 11:25:59 PM view.MainForm filterCulturedStudents
-INFO: Student filtration has begun.
-мая 04, 2024 11:25:59 PM view.MainForm displayFilteredStudents
-INFO: Students filtered by isCulture successfully.
-мая 04, 2024 11:26:01 PM view.MainForm filterCulturedStudents
-INFO: The student filtration has ended successfully.
-мая 04, 2024 11:26:02 PM view.MainForm initializeTable
-INFO: Table initialized successfully.
-мая 04, 2024 11:26:02 PM view.MainForm refreshStudents
-INFO: The students have been successfully refreshed. 
-мая 04, 2024 11:26:05 PM view.MainForm saveStudentsToFile
-INFO: Students saved to file students.txt successfully.
-мая 04, 2024 11:26:07 PM view.RemoveForm <init>
-INFO: RemoveForm created
-мая 04, 2024 11:26:11 PM view.RemoveForm removeStudent
-INFO: Started removing a student with Id: 5
-мая 04, 2024 11:26:11 PM view.MainForm initializeTable
-INFO: Table initialized successfully.
-мая 04, 2024 11:26:11 PM view.MainForm refreshStudents
-INFO: The students have been successfully refreshed. 
-мая 04, 2024 11:26:11 PM view.RemoveForm removeStudent
-INFO: Student with ID 5 removed succesfully.
+мая 05, 2024 11:43:48 PM view.MainForm setStats
+INFO: Statistics set successfully.
+мая 05, 2024 11:43:48 PM view.MainForm refreshStudents
+INFO: The students have been successfully refreshed.
+мая 05, 2024 11:43:48 PM view.MainForm setTheme
+INFO: Theme initialization.
+мая 05, 2024 11:43:48 PM view.MainForm setTheme
+INFO: Theme changed successfully.
+мая 05, 2024 11:43:48 PM view.MainForm <init>
+INFO: MainForm created

@@ -8,6 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.logging.Logger;
 
+/**
+ * Represents the form for adding a new student.
+ */
 public class AddForm extends JFrame {
     public JPanel PanelWrapper;
     private JPanel Content;
@@ -20,42 +23,65 @@ public class AddForm extends JFrame {
     private JSpinner spinnerId;
     private JButton buttonAdd;
     private static final Logger logger = MyLogger.getLogger();
+
+    /**
+     * Constructs the AddForm.
+     *
+     * @param mainForm The MainForm instance
+     */
     public AddForm(MainForm mainForm) {
         logger.info("AddForm created");
+
+        // Add action listener to the add button
         buttonAdd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Получаем данные о студенте из формы
-                int id = (int) spinnerId.getValue();
-                String name = textFieldName.getText();
-                int age = (int) spinnerAge.getValue();
-                boolean isCulture = checkBoxIsCulture.isSelected();
-
-                if (name.isEmpty()) {
-                    logger.warning("Please enter student name.");
-                    JOptionPane.showMessageDialog(mainForm, "Please enter student name.", "Error", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-
-                // Создаем нового студента
-                Student student = new Student(id, age, name, isCulture);
-
-                // Добавляем студента в группу
-                boolean result = mainForm.getStudentGroup().addStudent(student);
-                if (result) {
-                    mainForm.refreshStudents();
-                    spinnerId.setValue(0);
-                    spinnerAge.setValue(0);
-                    textFieldName.setText("");
-                    checkBoxIsCulture.setSelected(false);
-                    logger.info("Student added successfully.");
-                    JOptionPane.showMessageDialog(mainForm, "Student added successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    logger.warning("This id is already exist in collection.");
-                    JOptionPane.showMessageDialog(mainForm, "This id is already exist in collection.", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-
+                addStudent(mainForm);
             }
         });
+    }
+
+    /**
+     * Adds a new student based on the form input.
+     *
+     * @param mainForm The MainForm instance
+     */
+    private void addStudent(MainForm mainForm) {
+        // Get student data from the form
+        int id = (int) spinnerId.getValue();
+        String name = textFieldName.getText();
+        int age = (int) spinnerAge.getValue();
+        boolean isCulture = checkBoxIsCulture.isSelected();
+
+        // Validate student name
+        if (name.isEmpty()) {
+            logger.warning("Please enter student name.");
+            JOptionPane.showMessageDialog(mainForm, "Please enter student name.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Create a new student object
+        Student student = new Student(id, age, name, isCulture);
+
+        // Add the student to the group
+        boolean result = mainForm.getStudentGroup().addStudent(student);
+        if (result) {
+            // Refresh the display of students in the main form
+            mainForm.refreshStudents();
+
+            // Clear form fields after successful addition
+            spinnerId.setValue(0);
+            spinnerAge.setValue(0);
+            textFieldName.setText("");
+            checkBoxIsCulture.setSelected(false);
+
+            // Log successful student addition
+            logger.info("Student added successfully.");
+            JOptionPane.showMessageDialog(mainForm, "Student added successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            // Log if student ID already exists in the collection
+            logger.warning("This id is already exist in collection.");
+            JOptionPane.showMessageDialog(mainForm, "This id is already exist in collection.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 }

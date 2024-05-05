@@ -14,9 +14,9 @@ public class Main {
         JFrame frame = new JFrame("Список студентов");
         frame.setContentPane(new MainForm().PanelWrapper);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocation(500, 200);
+        frame.setLocation(300, 140);
         frame.pack();
-        frame.setSize(1000, 500);
+        frame.setSize(1400, 800);
         frame.setVisible(true);
     }
 }

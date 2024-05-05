@@ -111,5 +111,10 @@ public class Student implements IStudent {
     public void setCulture(boolean isCulture) {
         this.isCulture = isCulture;
     }
+
+    @Override
+    public String toString(){
+        return "ID: " + id + ", Name: " + name + ", Age: " + age + ", isCulture: " + isCulture;
+    }
 }
 
